@@ -22,5 +22,9 @@ RSpec.describe Calculator do
       expect(Calculator.add("8,9,1,2,3,4,5,6")).to eq(38)
     end
 
+    it 'to allow newlines between numbers' do
+      expect(Calculator.add("1\n2,3")).to eq(6)
+    end
+
   end
 end
