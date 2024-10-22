@@ -15,7 +15,7 @@ class Calculator
     sum = 0
     num_array.each do |n|
       n = n.to_i
-      raise "Invalid input: Negative numbers present" if n < 0
+      raise "Negative numbers not allowed #{n}" if n < 0
       sum += n
     end
   
