@@ -12,14 +12,21 @@ class Calculator
     num_array = numbers.split(",")
 
     #adding each element of array as sum
-    sum = 0
+    negatives_nums = []
+    valid_nums = []
+    
     num_array.each do |n|
       n = n.to_i
-      raise "Negative numbers not allowed #{n}" if n < 0
-      sum += n
+      if n < 0
+        negatives_nums << n
+      else
+        valid_nums << n
+      end 
     end
-  
-    return sum
+
+    raise "Negative numbers not allowed #{negatives_nums}" unless negatives_nums.empty?
+    
+    return valid_nums.sum
 
   end
 
