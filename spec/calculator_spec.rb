@@ -30,5 +30,9 @@ RSpec.describe Calculator do
       expect(Calculator.add("//;\n1;2")).to eq(3)
     end
 
+     it 'raises an exception if negative numbers are present' do
+      expect { Calculator.add("1,-2,-3,4") }.to raise_error("Invalid input: Negative numbers present")
+    end
+
   end
 end
