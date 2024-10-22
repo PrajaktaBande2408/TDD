@@ -3,7 +3,7 @@ class Calculator
     return 0 if numbers.empty?
 
     #Here we can extend multiple delimiters list in below Regexp
-    delimiter_regex_list = /[\n,]/
+    delimiter_regex_list = /[\n,;\/]/
 
     #Replace input strings all delimiter with ,
     numbers = numbers.gsub(delimiter_regex_list, ",")
