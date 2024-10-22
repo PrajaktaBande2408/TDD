@@ -9,11 +9,13 @@ class Calculator
     numbers = numbers.gsub(delimiter_regex_list, ",")
 
     #Splitting the input string with delimiter like , or /n and storing it to array
-    num_array = numbers.split(",").map(&:to_i)
+    num_array = numbers.split(",")
 
     #adding each element of array as sum
     sum = 0
     num_array.each do |n|
+      n = n.to_i
+      raise "Invalid input: Negative numbers present" if n < 0
       sum += n
     end
   
